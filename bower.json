@@ -13,6 +13,6 @@
     "dist_test"
   ],
   "dependencies": {
-    "durandal": "2.1.0"
+    "kingdom": "adrotec/kingdom"
   }
 }
