@@ -5,7 +5,6 @@ var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 var concat = require('gulp-concat');
 var wrapper = require('gulp-wrapper');
-var pipe = require('pipe/gulp');
 var mergeStreams = require('event-stream').merge;
 var path = require('path');
 
@@ -30,6 +29,21 @@ var app = {
   lessFiles:   src + '/app/**/*.less',
   sassFiles:   src + '/app/**/*.scss',
   htmlFiles:   src + '/app/**/*.html',
+}
+
+function traceurOptions(options) {
+  var allOptions = {
+    modules: 'amd',
+    types: true,
+    annotations: true,
+    typeAssertions: true,
+    typeAssertions: true,
+    typeAssertionModule: 'rtts-assert'
+  };
+  for(var key in options){
+    allOptions[key] = options[key];
+  }
+  return allOptions;
 }
 
 function gulpShared(){
@@ -72,13 +86,13 @@ function gulpShared(){
 
   gulp.task('build_js', function () {
     return gulp.src(jsFiles)
-      .pipe(traceur(pipe.traceur()))
+      .pipe(traceur(traceurOptions()))
       .pipe(gulp.dest(dist + '/'));
   });
 
   gulp.task('build_test', function () {
     return gulp.src(testFiles)
-      .pipe(traceur(pipe.traceur({modules: 'inline', asyncFunctions: true})))
+      .pipe(traceur(traceurOptions({modules: 'inline', asyncFunctions: true})))
       .pipe(gulp.dest('dist_test/'));
   });
 
@@ -111,11 +125,11 @@ function gulpShared(){
 
   gulp.task('build_deps', function(){
       gulp.src('./node_modules/di/src/**/*.js')
-      .pipe(traceur(pipe.traceur()))
+      .pipe(traceur(traceurOptions()))
     .pipe(gulp.dest(dist + '/lib/di/dist/amd'));
 
       gulp.src('./node_modules/rtts-assert/src/**/*.js')
-      .pipe(traceur(pipe.traceur()))
+      .pipe(traceur(traceurOptions()))
     .pipe(gulp.dest(dist + '/lib/rtts-assert/dist/amd'));
 
     gulp.src('./node_modules/requirejs/*')
