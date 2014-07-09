@@ -1,0 +1,21 @@
+<h1>I am the Demo!</h1>
+
+<nav>
+  <ul>
+    {{#each navigation}}
+      {{#if isActive}}
+      <li class="active">
+        <a href="{{href}}">{{title}}</a>
+      </li>
+      {{else}}
+      <li>
+        <a href="{{href}}">{{title}}</a>
+      </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</nav>
+
+<div class="main">
+  <view-port></view-port>
+</div>

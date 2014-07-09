@@ -1,0 +1,18 @@
+{
+  "name": "kingdom-starter-basic",
+  "version": "0.1.0",
+  "authors": [
+    "Muhammad Safraz Razik <mr.safraz@gmail.com>"
+  ],
+  "description": "Kingdom Starter Kit",
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "dist",
+    "dist_test"
+  ],
+  "dependencies": {
+    "durandal": "2.1.0",
+  }
+}
