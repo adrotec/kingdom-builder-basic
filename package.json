@@ -28,6 +28,6 @@
   "repository" : {
     "type" : "git",
     "url" : "http://github.com/adrotec/kingdom-builder-basic.git"
-  }
+  },
   "license": "MIT"
 }
