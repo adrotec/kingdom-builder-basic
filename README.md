@@ -7,7 +7,7 @@
 - NodeJs
 - gulp `npm install -g gulp`
 - bower `npm install -g bower`
-- karma `npm install -g karma`
+- karma `npm install -g karma-cli`
 - protractor `npm install -g protractor`
 
 ### Installation
