@@ -25,5 +25,9 @@
     "name": "Muhammad Safraz Razik",
     "email": "mr.safraz@gmail.com"
   },
+  "repository" : {
+    "type" : "git",
+    "url" : "http://github.com/adrotec/kingdom-builder-basic.git"
+  }
   "license": "MIT"
 }
