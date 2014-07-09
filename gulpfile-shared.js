@@ -132,13 +132,13 @@ function gulpShared(){
       .pipe(traceur(traceurOptions()))
     .pipe(gulp.dest(dist + '/lib/rtts-assert/dist/amd'));
 
-    gulp.src('./node_modules/requirejs/*')
+    gulp.src('./node_modules/requirejs/**/*')
     .pipe(gulp.dest(dist + '/lib/requirejs'));
 
-    gulp.src('./node_modules/kingdom/*')
+    gulp.src('./node_modules/kingdom/**/*')
     .pipe(gulp.dest(dist + '/lib/kingdom'));
 
-    gulp.src('./node_modules/traceur/bin/*')
+    gulp.src('./node_modules/traceur/bin/**/*')
     .pipe(gulp.dest(dist + '/lib/traceur/bin'));
 
   });
